@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
+    />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Company Profile</title>
+
+    <style>
+      body {
+        background: #edf6ff;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #edf6ff, #edf6ff);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #edf6ff, #edf6ff);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        padding: 0;
+        margin: 0;
+        font-family: "Lato", sans-serif;
+        color: #000;
+      }
+
+      .student-profile .card {
+        border-radius: 10px;
+      }
+
+      .student-profile .card .card-header .profile_img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        margin: 10px auto;
+        border: 10px solid #437fc7;
+        border-radius: 50%;
+      }
+
+      .student-profile .card h3 {
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      .student-profile .card p {
+        font-size: 16px;
+        color: #000;
+      }
+
+      .student-profile .table th,
+      .student-profile .table td {
+        font-size: 14px;
+        padding: 5px 10px;
+        color: #000;
+      }
+    </style>
+  </head>
+
+    <!-- START HERE -->
+    {% include './partials/adm_navbar.html' %}
+    <div class="student-profile py-4">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-transparent text-center">
+                            <img src="data:;base64,{{ image }}"
+                                alt="avatar" class="rounded-circle img-fluid profile_img" style="width: 150px;">
+                            <h3 class="my-3 d-flex"
+                                style="width: max-content;margin: auto; font-weight: bold; color: #080808;">
+                                {{person[1]}}</h3>
+                                <button><a href='/xss/{{person[0]}}'>XSS</a></button>
+                        </div>
+                        <div class="card-body">
+                            <p class="mb-0 text-muted mb-1"><strong class="pr-1">ID:</strong>{{person[0]}}</p>
+                            <p class="mb-0 text-muted mb-4"><strong class="pr-1">email:</strong>{{person[5]}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-transparent border-0">
+                            <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Personal Details</h3>
+                        </div>
+                        <div class="card-body person_details pt-0">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <table class="table table-bordered">
+                                        <tr>
+                                            <th width="30%">First Name</th>
+                                            <td width="2%">:</td>
+                                            <td class="text-muted mb-0">{{person[1]}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th width="30%">Middle Name</th>
+                                            <td width="2%">:</td>
+                                            <td class="text-muted mb-0">{{person[2]}}</td>
+
+                                        </tr>
+                                        <tr>
+                                            <th width="30%">Last Name</th>
+                                            <td width="2%">:</td>
+                                            <td class="text-muted mb-0">{{person[3]}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th width="30%">Contact</th>
+                                            <td width="2%">:</td>
+                                            <td class="text-muted mb-0">{{person[4]}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th width="30%">Institute Email Address</th>
+                                            <td width="2%">:</td>
+                                            <td class="text-muted mb-0">{{person[5]}}</td>
+                                        </tr>
+
+                                    </table>
+                                </div>
+                                <div class="col-lg-6">
+                                    <table class="table table-bordered">
+                                        <tr>
+                                            <th width="30%">Designation</th>
+                                            <td width="2%">:</td>
+                                            <td class="text-muted mb-0">{{admin[1]}} </td>
+                                        </tr>
+                                        <tr>
+                                            <th width="30%">Address</th>
+                                            <td width="2%">:</td>
+                                            <td class="text-muted mb-0">{{address[4]}} , {{address[2]}} (Zip: {{address[1]}} ) </p</td>
+                                        </tr>
+                                        <tr>
+                                            <th width="30%">State</th>
+                                            <td width="2%">:</td>
+                                            <td class="text-muted mb-0">{{address[3]}} </td>
+                                        </tr>
+                                        <tr>
+                                            <th width="30%">Nationality</th>
+                                            <td width="2%">:</td>
+                                            <td class="text-muted mb-0">{{person[8]}}</td>
+                                        </tr>
+                                        
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            if ('{{ alert }}') {
+                alert('{{ alert }}');
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+
+</body>

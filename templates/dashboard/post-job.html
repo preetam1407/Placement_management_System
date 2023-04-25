@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+      integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <title>Post Job</title>
+
+    <style>
+      @media (min-width: 576px) {
+        #left {
+          position: fixed;
+          top: 0;
+          bottom: 0;
+        }
+      }
+
+      .form-control {
+        background: none;
+        color: #fff;
+      }
+
+      input[type="text"],
+      input[type="number"],
+      input[type="phone-number"],
+      input[type="email"] {
+        background: #437fc7;
+        color: #fff;
+        border: none;
+        border-bottom: 2px solid #fff;
+      }
+
+      input::placeholder {
+        color: #fff;
+        opacity: 1;
+      }
+
+      .form-control:focus {
+        border-color: inherit;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        border-bottom: 2px solid #fff;
+        outline: 0;
+        background-color: #437fc7;
+        color: #ecf0f5;
+      }
+
+      #blueDIV {
+        position: absolute;
+        padding: 10px;
+        right: 0px;
+      }
+    </style>
+  </head>
+
+  <body style="background-color: #edf6ff">
+    <!-- START HERE -->
+    {% include './partials/cmp_navbar.html' %}
+
+    <section class="h-100">
+      <div class="container-fluid">
+        <div class="row g-0">
+          <div
+            class="col-lg-6 col-md-12 d-none d-lg-block"
+            id="left"
+            style="float: left"
+          >
+            <img
+              src="https://github.com/samikshakamble1309/image/blob/main/Pitch%20meeting-rafiki.png?raw=true"
+              alt="Sample photo"
+              class="img-fluid"
+              style="
+                border-top-left-radius: 0.25rem;
+                border-bottom-left-radius: 0.25rem;
+              "
+            />
+          </div>
+          <div
+            class="col-lg-6 col-md-12 offset-0 offset-lg-6 text-right"
+            id="blueDIV"
+          >
+            <p
+              class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4"
+              style="color: #437fc7"
+            >
+              Post a New Job
+            </p>
+            <p class="text-center h6" style="color: #437fc7">
+              You can use the following job ids
+            </p>
+            <p id="job_id" class="text-center h6" style="color: #437fc7"></p>
+
+            <form class="mx-1 mx-md-4" method="POST" style="color: #fff">
+              <div
+                class="card"
+                style="
+                  border-radius: 5px;
+                  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+                "
+              >
+                <div
+                  class="card-body"
+                  style="background-color: #437fc7"
+                  padding="16px"
+                >
+                  <p
+                    class="text-left h3 fw-bold mb-5 mx-1 mx-n-auto mt-4"
+                    style="color: #fff"
+                  >
+                    Job Details
+                  </p>
+
+                  <div class="row g-2">
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-6 form-floating"
+                    >
+                      <input
+                        type="text"
+                        id="floatingInput"
+                        class="form-control"
+                        name="job_id"
+                        required
+                        placeholder="Job ID"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >Job ID<span style="color: red">*</span></label
+                      >
+                    </div>
+
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-3 form-floating"
+                    >
+                      <input
+                        type="text"
+                        id="floatingInput"
+                        class="form-control"
+                        name="job_designation"
+                        required
+                        placeholder="Job Designation"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >Job Designation</label
+                      >
+                    </div>
+
+                    <!--take file as input-->
+                    <div class="mb-3" style="margin-top: 20px">
+                      <input
+                        type="file"
+                        id="formFileMultiple"
+                        class="form-control"
+                        name="job_description"
+                        required
+                        multiple
+                        placeholder="Job Description"
+                      />
+                      <label class="form-label" for="formFileMultiple"
+                        >Job Description<span style="color: red">*</span></label
+                      >
+                    </div>
+                  </div>
+
+                  <div class="row g-2">
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-4 form-floating"
+                    >
+                      <input
+                        type="text"
+                        id="floatingInput"
+                        class="form-control"
+                        name="job_location"
+                        required
+                        placeholder="Job Location"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >Job Location</label
+                      >
+                    </div>
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-6 form-floating"
+                    >
+                      <input
+                        type="number"
+                        step="any"
+                        id="floatingInput"
+                        class="form-control"
+                        name="cutoff_cpi"
+                        required
+                        placeholder="Cutoff CPI"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >Cutoff CPI<span style="color: red">*</span></label
+                      >
+                    </div>
+                  </div>
+
+                  <div class="row g-2">
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-6 form-floating"
+                      style="margin-top: 20px"
+                    >
+                      <input
+                        type="date"
+                        id="floatingInput"
+                        class="form-control"
+                        name="start_date"
+                        required
+                        placeholder="Start Date"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >Start Date<span style="color: red">*</span></label
+                      >
+                    </div>
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-6 form-floating"
+                      style="margin-top: 20px"
+                    >
+                      <input
+                        type="date"
+                        id="floatingInput"
+                        class="form-control"
+                        name="end_date"
+                        required
+                        placeholder="End Date"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >End Date<span style="color: red">*</span></label
+                      >
+                    </div>
+                  </div>
+                  <!--take file as input-->
+                  <div class="row g-2">
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-6 form-floating"
+                    >
+                      <input
+                        type="text"
+                        id="floatingInput"
+                        class="form-control"
+                        name="terms_and_conditions"
+                        placeholder="Terms and Conditions"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >Terms and Conditions</label
+                      >
+                    </div>
+
+                    <!--add checkbox-->
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-4 form-floating"
+                    >
+                      <input
+                        type="number"
+                        id="floatingInput"
+                        class="form-control"
+                        name="six_month_intern_possibility"
+                        required
+                        placeholder="Six Month Intern Possibility"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >Six Month Intern Possibillity (0/1)</label
+                      >
+                    </div>
+                  </div>
+
+                  <div class="row g-2">
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-6 form-floating"
+                    >
+                      <input
+                        type="number"
+                        id="floatingInput"
+                        class="form-control"
+                        name="early_onboarding_possibility"
+                        required
+                        placeholder="Early Onboarding Possibility"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >Early Onboarding Possibility (0/1)</label
+                      >
+                    </div>
+                    <!-- add checkbox -->
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-6 form-floating"
+                    >
+                      <input
+                        type="number"
+                        id="floatingInput"
+                        class="form-control"
+                        name="particularly_early_onboarding_required"
+                        required
+                        placeholder="Particularly Early Onboarding Required"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >Particularly Early Onboarding Required (0/1)</label
+                      >
+                    </div>
+                  </div>
+
+                  <div class="row g-2">
+                    <!-- add a checkbox -->
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-6 form-floating"
+                    >
+                      <input
+                        type="number"
+                        id="floatingInput"
+                        class="form-control"
+                        name="early_graduate_students_are_excluded"
+                        required
+                        placeholder="Early Graduate Students are Excluded"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >Early Graduate Students are Excluded (0/1)</label
+                      >
+                    </div>
+
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-6 form-floating"
+                    >
+                      <input
+                        type="text"
+                        id="floatingInput"
+                        class="form-control"
+                        name="shortlist_from_resume"
+                        required
+                        placeholder="Shortlist From Resume"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >Shortlist from Resume (0/1)</label
+                      >
+                    </div>
+                  </div>
+
+                  <div class="row g-2">
+                    <!-- add a checkbox -->
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-6 form-floating"
+                    >
+                      <input
+                        type="text"
+                        id="floatingInput"
+                        class="form-control"
+                        name="ppt"
+                        required
+                        placeholder="PPT"
+                      />
+                      <label class="form-label" for="form3Example3c">PPT</label>
+                    </div>
+
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-6 form-floating"
+                    >
+                      <input
+                        type="text"
+                        id="floatingInput"
+                        class="form-control"
+                        name="technical_test"
+                        required
+                        placeholder="Technical Test"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >Technical Test (0/1)</label
+                      >
+                    </div>
+
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-6 form-floating"
+                    >
+                      <input
+                        type="text"
+                        id="floatingInput"
+                        class="form-control"
+                        name="aptitude_test"
+                        required
+                        placeholder="Aptitude Test"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >Aptitude Test (0/1)</label
+                      >
+                    </div>
+
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-6 form-floating"
+                    >
+                      <input
+                        type="text"
+                        id="floatingInput"
+                        class="form-control"
+                        name="psychometric_test"
+                        required
+                        placeholder="Psychometric Test"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >Psychometric Test (0/1)</label
+                      >
+                    </div>
+
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-6 form-floating"
+                    >
+                      <input
+                        type="text"
+                        id="floatingInput"
+                        class="form-control"
+                        name="group_discussion"
+                        required
+                        placeholder="Group Discussion"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >Group Discussion (0/1)</label
+                      >
+                    </div>
+
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-6 form-floating"
+                    >
+                      <input
+                        type="int"
+                        id="floatingInput"
+                        class="form-control"
+                        name="technical_interviews"
+                        required
+                        placeholder="Technical Interviews"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >Number of Technical Interviews</label
+                      >
+                    </div>
+                  </div>
+                  <div class="row g-2">
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-6 form-floating"
+                      style="margin-top: 20px"
+                    >
+                      <input
+                        type="int"
+                        id="floatingInput"
+                        class="form-control"
+                        name="hr_interviews"
+                        required
+                        placeholder="HR Interviews"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >Number of HR Interviews</label
+                      >
+                    </div>
+
+                    <div>
+                      <strong>Select Job Profile:</strong>
+                      <select name="job_profiles">
+                        <option value="">Select*</option>
+                        <option value="Finance">Finance</option>
+                        <option value="ME">Mechanical Engineering</option>
+                        <option value="EE">Electrical Engineering</option>
+                        <option value="CSE">
+                          Computer Science & Engineering
+                        </option>
+                        <option value="Other">Other</option>
+                      </select>
+                      <strong>Select Job Category:</strong>
+                      <select name="job_categories">
+                        <option value="">Select*</option>
+                        <option value="In-person">In-person</option>
+                        <option value="Remote">Remote</option>
+                        <option value="Full-time">Full-time</option>
+                        <option value="Part-time">Part-time</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+
+                    <div class="col-6" style="margin-top: 20px">
+                      <label class="radio-label">
+                        <input type="radio" name="service_bond" value="yes" />
+                        Yes
+                      </label>
+                      <label class="radio-label">
+                        <input type="radio" name="service_bond" value="no" />
+                        No </label
+                      ><br />
+                      <label class="form-label" for="form3Example3c"
+                        >Service Bond</label
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                <button type="submit" class="btn btn-primary btn-lg">
+                  Post Job
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script
+      src="http://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+      integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      // Get the current year for the copyright
+      $("#year").text(new Date().getFullYear());
+    </script>
+    <script type="text/javascript">
+      var arr = [];
+      for (var i = 0; i < 5; i++) {
+        var x = Math.floor(Math.random() * 100000000);
+        arr.push(x);
+      }
+      document.getElementById("job_id").innerText = arr;
+    </script>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#multiple-checkboxes").multiselect({
+          includeSelectAllOption: true,
+        });
+      });
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+    <script
+      type="text/javascript"
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
+  </body>
+</html>

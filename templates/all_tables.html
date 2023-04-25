@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <style>
+    h2 {
+      text-align: center;
+      font-weight: 1000;
+      color: #151111;
+      padding: 40px;
+      font-size: 64px;
+    }
+    img {
+      width: 60px;
+      height: 60px;
+      margin-top: 15px;
+    }
+    .row {
+      padding-left: 130px; 
+      margin: 80px;
+    }
+    .row .card {
+      width: 250px;
+      height: 250px;
+      background: #6193d1;
+      border-radius: 15px;
+      border: None;
+      box-shadow: 1px 5px 20px 0px #100a886b;
+      
+    }
+    .row .card .card-border-top {
+      width: 60%;
+      height: 3%;
+      background: #151111;
+      margin-left: 20%;
+      border-radius: 0px 0px 15px 15px;
+    }
+    .row .card span {
+      font-weight: 600;
+      color: #ffffFF;
+      text-align: center;
+      display: block;
+      padding-top: 0px;
+      font-size: 24px;
+    }
+    .row .card .job {
+      font-weight: 400;
+      color: white;
+      display: block;
+      text-align: center;
+      padding-top: 3px;
+      font-size: 12px;
+    }
+    .row .card .img {
+      width: 100px;
+      height: 100px;
+      background: #fff;
+      border-radius: 15px;
+      margin: auto;
+      margin-top: 25px;
+    }
+    .row .card .button {
+      padding: 4px 15px;
+      display: block;
+      margin: auto;
+      border-radius: 8px;
+      border: none;
+      margin-top: 10px;
+      background: #151111;
+      color: #fff;
+      font-weight: 300;
+      font-size: 12px;
+    }
+    .row .card .button:hover {
+      background: #ffffff;
+      color: #437FC7;
+    }
+
+
+  </style>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Admin Dashboard</title>
+  </head>
+ 
+  <body style="background-color: #edf6ff">
+    <h2> See All Tables</h2>
+    <div class="container mx-auto text-center">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-border-top">
+            </div>
+            
+            <div class="img">
+              <img src="{{url_for('static', filename='Address.png')}}" alt="address" >
+            </div>
+
+            <span>Address</span>
+            <a href="/address-table" class="button" style="text-decoration: None">See table</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-border-top">
+            </div>
+            
+            <div class="img">
+              <img src="{{url_for('static', filename='Admin.jpg')}}" alt="admin"  >
+            </div>
+
+            <span>Admin</span>
+            <a href="/admin-table" class="button" style="text-decoration: None">See table</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-border-top">
+            </div>
+            
+            <div class="img">
+              <img src="{{url_for('static', filename='Company.jpg')}}" alt="company details">
+            </div>
+
+            <span>Company Details</span>
+            <a href="/company-details-table" class="button" style="text-decoration: None">See table</a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-border-top">
+            </div>
+            
+            <div class="img">
+              <img src="{{url_for('static', filename='Education.png')}}" alt="education details" >
+            </div>
+
+            <span>Educational Details</span>
+            <a href="/educational-details-table" class="button" style="text-decoration: None">See table</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-border-top">
+            </div>
+            
+            <div class="img">
+              <img src="{{url_for('static', filename='HR.jpg')}}" alt="hr" >
+            </div>
+
+            <span>HR</span>
+            <a href="/hr-table"class="button" style="text-decoration: None">See table</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-border-top">
+            </div>
+            
+            <div class="img">
+              <img src="{{url_for('static', filename='Job Profile.jpg')}}" alt="job profile" >
+            </div>
+
+            <span>Job Profile</span>
+            <a href="/job-profile-table" class="button" style="text-decoration: None">See table</a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-border-top">
+            </div>
+            
+            <div class="img">
+              <img src="{{url_for('static', filename='Person.jpg')}}" alt="person">
+            </div>
+
+            <span>Person</span>
+            <a href="/person-table" class="button" style="text-decoration: None">See table</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-border-top">
+            </div>
+
+            <div class="img">
+              <img src="{{url_for('static', filename='Program Details.jpg')}}" alt="program-details">
+            </div>
+
+            <span>Program Details</span>
+            <a href="/program-details" class="button" style="text-decoration: None">See table</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-border-top">
+            </div>
+            <div class="img">
+              <img src="{{url_for('static', filename='Student.jpg')}}" alt="student" >
+            </div>
+            <span>student</span>
+            <a href="/student-table" class="button" style="text-decoration: None">See table</a>
+          </div>
+        </div>
+      </div>    
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+  </body>
+</html>

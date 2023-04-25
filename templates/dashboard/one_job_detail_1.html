@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+  <!-- Font Awesome CSS -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'>
+  <title>Job Details</title>
+
+  <style>
+    body {
+      background: #EDF6FF;
+      /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #EDF6FF, #EDF6FF);
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #EDF6FF, #EDF6FF);
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      padding: 0;
+      margin: 0;
+      font-family: 'Lato', sans-serif;
+      color: #000;
+
+    }
+
+    .student-profile .card {
+      border-radius: 10px;
+    }
+
+    .student-profile .card .card-header .profile_img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      margin: 10px auto;
+      border: 10px solid #ccc;
+      border-radius: 50%;
+    }
+
+    .student-profile .card h3 {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .student-profile .card p {
+      font-size: 16px;
+      color: #000;
+    }
+
+    .student-profile .table th,
+    .student-profile .table td {
+      font-size: 14px;
+      padding: 5px 10px;
+      color: #000;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- START HERE -->
+
+  <div class="student-profile py-4">
+    <div class="container-fluid">
+      <div class="row">
+        
+        <div class="col-lg-12">
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent border-0">
+              <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Basic Details</h3>
+            </div>
+            <div class="card-body person_details pt-0">
+              <div class="row">
+                <div class="col-lg-6">
+                  <table class="table table-bordered">
+                    <tr>
+                      <th width="30%">Job Designation</th>
+                      <td width="2%">:</td>
+                      <td class="text-muted mb-0">{{job[1]}}</td>
+                    </tr>
+                    <tr>
+                      <th width="30%">Job Location</th>
+                      <td width="2%">:</td>
+                      <td class="text-muted mb-0">{{job[3]}}</td>
+                    </tr>
+                    <tr>
+                      <th width="30%">Hiring Process Starts from</th>
+                      <td width="2%">:</td>
+                      <td class="text-muted mb-0"><input type="date" id="intern-date" name="intern-date">
+                      </td>
+                    </tr>
+                    <tr>
+                      <th width="30%">End of the hiring process</th>
+                      <td width="2%">:</td>
+                      <td class="text-muted mb-0"><input type="date" id="intern-date" name="intern-date">
+                      </td>
+                    </tr>
+                    
+                   
+                  </table>
+                </div>
+                <div class="col-lg-6">
+                  <table class="table table-bordered">
+                   
+                    <tr>
+                      <th width="30%">Job Description</th>
+                      <td width="2%">:</td>
+                      <td class="text-muted mb-0">
+                        <div class="col-lg-4">
+                          <!-- <div class="card shadow-sm"> -->
+                              <div class="card-header bg-transparent text-center">
+                                  <object
+                                  data='data:application/pdf;base64, {{jd}}'
+                                  type="application/pdf"
+                                  width="300"
+                                  height="300"
+                                >
+                          
+                                  
+                                  <p>This browser does not support PDF!</p>
+                                  </iframe>
+                                </object>
+                              </div>
+                          <!-- </div> -->
+                        </div>
+                      </td>
+                    </tr>
+                    
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="height: 26px"></div>
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent border-0">
+              <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Eligiblity</h3>
+            </div>
+            <div class="card-body ed_details pt-0">
+              <div class="row">
+                <div class="col-lg-4">
+                  <table class="table table-bordered">
+                    <tr>
+                      <th width="50%">Cut-off CPI</th>
+                      <td width="2%">:</td>
+                      <td class="text-muted mb-0">{{job[4]}}</td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="col-lg-4">
+                  <table class="table table-bordered">
+                    <tr>
+                      <th width="50%">Eligible Minor Disciplines</th>
+                      <td width="2%">:</td>
+                      <td class="text-muted mb-0">{{job[15]}}</td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="col-lg-4">
+                  <table class="table table-bordered">
+                    <tr>
+                      <th width="50%">Eligible Major Disciplines</th>
+                      <td width="2%">:</td>
+                      <td class="text-muted mb-0">{{job[17]}}</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="height: 26px"></div>
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent border-0">
+              <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Selection Procedure</h3>
+            </div>
+            <div class="card-body person_details pt-0">
+              <div class="row">
+                <div class="col-lg-6">
+                  <table class="table table-bordered">
+                    <tr>
+                      <th width="30%">Current Status</th>
+                      <td width="2%">:</td>
+                      <td class="text-muted mb-0">{{job[1]}}</td>
+                    </tr>
+                    <tr>
+                      <th width="30%">Round Start Dete</th>
+                      <td width="2%">:</td>
+                      <td class="text-muted mb-0"><input type="date" id="intern-date" name="intern-date">
+                      </td>
+                    </tr>
+                    <tr>
+                      <th width="30%">Round End Date</th>
+                      <td width="2%">:</td>
+                      <td class="text-muted mb-0"><input type="date" id="intern-date" name="intern-date">
+                      </td>
+                    </tr>
+                    <tr>
+                      <th width="30%">Pre-Placement Talk</th>
+                      <td width="2%">:</td>
+                      <td class="text-muted mb-0"><select name="internship_possibility">
+                        <option value="yes">Yes</option>
+                        <option value="no" selected>No</option>
+                      </select>
+                    </td>
+                    </tr>
+                    <tr>
+                      <th width="30%">Technical Test</th>
+                      <td width="2%">:</td>
+                      <td class="text-muted mb-0"><select name="internship_possibility">
+                        <option value="yes">Yes</option>
+                        <option value="no" selected>No</option>
+                      </select>
+                    </td>
+                    </tr>
+                  </table>
+
+                </div>
+                <div class="col-lg-6">
+                  <table class="table table-bordered">
+                    <tr>
+                      <th width="30%">Aptitude Test</th>
+                      <td width="2%">:</td>
+                      <td class="text-muted mb-0"><select name="internship_possibility">
+                        <option value="yes">Yes</option>
+                        <option value="no" selected>No</option>
+                      </select>
+                    </td>
+                    </tr>
+                    <tr>
+                      <th width="30%">Psychometric Test</th>
+                      <td width="2%">:</td>
+                      <td class="text-muted mb-0"><select name="internship_possibility">
+                        <option value="yes">Yes</option>
+                        <option value="no" selected>No</option>
+                      </select>
+                    </td>
+                    </tr>
+                    <tr>
+                      <th width="30%">Group Discussion</th>
+                      <td width="2%">:</td>
+                      <td class="text-muted mb-0"><select name="internship_possibility">
+                        <option value="yes">Yes</option>
+                        <option value="no" selected>No</option>
+                      </select>
+                    </td>
+                    </tr>
+                    <tr>
+                      <th width="30%">Number of Technical Rounds</th>
+                      <td width="2%">:</td>
+                      <td class="text-muted mb-0"><input type="number" name="Number" min="0" max="100" step="1" value="Number"></td>
+                    </tr>
+                    <tr>
+                      <th width="30%">Number of HR Interviews</th>
+                      <td width="2%">:</td>
+                      <td class="text-muted mb-0"><input type="number" name="Number" min="0" max="100" step="1" value="Number"></td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div style="height: 26px"></div>
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent border-0">
+              <h3 class="mb-0"><i class="far fa-clone pr-1"></i> Salary Details</h3>
+            </div>
+            <div class="card-body ed_details pt-0">
+              <div class="row">
+                <div class="col-lg-12">
+                  <table border="1" width="100%" style="table-layout: fixed;">
+                    <tr>
+                      <th>Program</th>
+                      <th>Number of positions</th>
+                      <th>Basic</th>
+                      <th>HRA</th>
+                      <th>Gross</th>
+                      <th>Other</th>
+                      <th>Take Home</th>
+                      <th>CTC</th>
+
+                    </tr>
+                    {% for detail in details %}
+                    <tr>
+                      <td>{{detail[8]}}</td>
+                      <td>{{detail[1]}}</td>
+                      <td>{{detail[2]}}</td>
+                      <td>{{detail[3]}}</td>
+                      <td>{{detail[4]}}</td>
+                      <td>{{detail[5]}}</td>
+                      <td>{{detail[6]}}</td>
+                      <td>{{detail[7]}}</td>
+                    </tr>
+                    {% endfor %}
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: 26px"></div>
+      <div class="card shadow-sm">
+        <div class="card-header bg-transparent border-0">
+          <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Other Details</h3>
+        </div>
+        <div class="card-body person_details pt-0">
+          <div class="row">
+            <div class="col-lg-6">
+              <table class="table table-bordered">
+                <tr>
+                  <th width="30%">Designation of HR</HR>
+                  </th>
+                  <td width="2%">:</td>
+                  <td class="text-muted mb-0">{{job[1]}}</td>
+                </tr>
+               
+                <tr>
+                  <th width="30%">6-month intern possibility</th>
+                  <td width="2%">:</td>
+                  <td class="text-muted mb-0"><select name="internship_possibility">
+                    <option value="yes">Yes</option>
+                    <option value="no" selected>No</option>
+                  </select>
+                </td>
+                </tr>
+
+              </table>
+            </div>
+            <div class="col-lg-6">
+              <table class="table table-bordered">
+                <tr>
+                  <th width="30%">Early onboarding possibility</th>
+                  <td width="2%">:</td>
+                  <td class="text-muted mb-0"><select name="internship_possibility">
+                    <option value="yes">Yes</option>
+                    <option value="no" selected>No</option>
+                  </select>
+                </td>
+                </tr>
+                <tr>
+                  <th width="30%">Early onboarding required</th>
+                  <td width="2%">:</td>
+                  <td class="text-muted mb-0"><select name="internship_possibility">
+                    <option value="yes">Yes</option>
+                    <option value="no" selected>No</option>
+                  </select>
+                </td>
+                </tr>
+                <tr>
+                  <th width="30%">Exclusion of early graduate students</th>
+                  <td width="2%">:</td>
+                  <td class="text-muted mb-0"><select name="internship_possibility">
+                    <option value="yes">Yes</option>
+                    <option value="no" selected>No</option>
+                  </select>
+                </td>
+                </tr>
+                <tr>
+              </table>
+
+              <br>
+              {%if (apply)%}
+              <form method="POST">
+                  <button class="btn btn-lg" type="submit">Apply</button>
+              </form> 
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  
+
+
+
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+    integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

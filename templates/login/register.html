@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+
+
+
+  <style>
+    body {
+    font-family: 'Roboto', sans-serif;
+    color: #ffff;
+}
+
+.navbar {
+    border-bottom:  #30b087 3px solid;
+    color: #E1E2E2;
+}
+
+.login-box {
+    margin: 100px 0;
+    height:auto;
+    background-color: #30b087;
+    border-radius: 0%;
+}
+
+input[type=number] {
+    background-color: #30b087;
+    border: none;
+    border-bottom: 2px solid #E1E2E2;
+    border-top: 0px;
+    border-radius: 0px;
+    font-weight: bold;
+    outline: 0;
+    margin-bottom: 20px;
+    padding-left: 0px;
+    color: #1D2228;
+}
+
+input[type=text] {
+    background-color: #30b087;
+    border: none;
+    border-bottom: 2px solid #E1E2E2;
+    border-top: 0px;
+    border-radius: 0px;
+    font-weight: bold;
+    outline: 0;
+    padding-left: 0px;
+    margin-bottom: 20px;
+    color: #1D2228;
+}
+
+
+
+button.btn.btn-lg.login-btn{
+    background-color: #132F42;
+    color: #ffff;
+    border-radius: 0%;
+}
+
+button.btn.btn-lg.login-btn:hover{
+    background-color: #ffff;
+    color: #132F42;
+    border-color:  #132F42;
+}
+
+a.register{
+    color: #132F42;
+}
+
+
+.nav-item{
+    color: #ffff;
+
+}
+
+
+  </style>
+  
+  <title>Login</title>
+</head>
+
+<body>
+  <!-- START HERE -->
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" id="main-nav">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">DATASonic</a>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <section class="vh-100" style="background-color: #132F42;">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+          <div class="card text-black login-box" style="border-radius: 0px;">
+            <div class="card-body p-md-5">
+              <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                  <p class="text-center h2 fw-bold mb-5 mx-1 mx-md-4 mt-4">REGISTER</p>
+                  <h1>{{error}}</h1>
+
+                                    <form class="mx-1 mx-md-4" method="POST">
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <!-- <i class="fas fa-user fa-lg me-3 fa-fw"></i> -->
+                                            <div class="form-outline flex-fill mb-0">
+                                                <label class="form-label" for="form3Example1c"><h2>You are a:</h2></label>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+
+                                            <div class="row g-2"><button class="btn btn-lg login-btn" type="submit" name="role" value="student">Student</button></div>
+                                            </div>
+                                            <div class="d-flex flex-row align-items-center mb-4">
+                                            <div class="row g-2"><button class="btn btn-lg login-btn" type="submit" name="role" value="company_rep">Company representative</button></div>
+                                        </div>
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <div class="row g-2"><button class="btn btn-lg login-btn" type="submit" name="role" value="admin">Administrator</button></div>
+                                        </div>
+
+                                    </form>
+
+                                
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+
+
+                </div>
+                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                  <img src="https://github.com/samikshakamble1309/image/blob/main/logo__1_-removebg-preview.png?raw=true"
+                    class="img-fluid login-img" alt="Image" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+
+  <script>
+    // Get the current year for the copyright
+    $('#year').text(new Date().getFullYear());
+  </script>
+
+
+</body>
+
+</html>
+
+ 
+

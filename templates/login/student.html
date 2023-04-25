@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+      integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <title>Student Registration</title>
+
+    <style>
+      @media (min-width: 576px) {
+        #left {
+          position: fixed;
+          top: 0;
+          bottom: 0;
+        }
+      }
+
+      .form-control {
+        background: none;
+        color: #fff;
+      }
+
+      input[type="text"],
+      input[type="number"],
+      input[type="phone-number"],
+      input[type="email"] {
+        background: #437fc7;
+        color: #fff;
+        border: none;
+        border-bottom: 2px solid #fff;
+      }
+
+      input::placeholder {
+        color: #fff;
+        opacity: 1;
+      }
+      /* input:placeholder-shown {
+            border: 1px solid #FFF;
+            margin-bottom: 10px;
+        } */
+
+      .form-control:focus {
+        border-color: inherit;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        border-bottom: 2px solid #fff;
+        outline: 0;
+        background-color: #437fc7;
+        color: #ecf0f5;
+      }
+    </style>
+  </head>
+
+  <body style="background-color: #edf6ff">
+    <!-- START HERE -->
+    <section class="h-100">
+      <div class="container-fluid">
+        <div class="row g-0">
+          <div class="col-lg-6 col-md-12 d-none d-lg-block" id="left">
+            <img
+              src="https://github.com/samikshakamble1309/image/blob/main/Pitch%20meeting-rafiki.png?raw=true"
+              alt="Sample photo"
+              class="img-fluid"
+              style="
+                border-top-left-radius: 0.25rem;
+                border-bottom-left-radius: 0.25rem;
+              "
+            />
+          </div>
+          <div class="col-lg-6 col-md-12 offset-0 offset-lg-6">
+            <p
+              class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4"
+              style="color: #437fc7"
+            >
+              Student Registration
+            </p>
+            <p class="text-center" style="color: #437fc7">
+              Note: You can use the following ids for registration
+            </p>
+            <p class="text-center" style="color: #437fc7" id="student_id"></p>
+            <form
+              class="mx-1 mx-md-4"
+              method="POST"
+              style="color: #ffffff"
+              enctype="multipart/form-data"
+            >
+              <div
+                class="card"
+                style="
+                  border-radius: 5px;
+                  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+                "
+              >
+                <div
+                  class="card-body"
+                  style="background-color: #437fc7; border-radius: 5px"
+                  padding="16px"
+                >
+                  <div class="row g-2">
+                    <div class="col-lg-6 form-floating">
+                      <input
+                        type="number"
+                        id="floatingInput"
+                        class="form-control"
+                        name="person_id"
+                        required
+                        placeholder="Student ID"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >Student ID <span style="color: red">*</span></label
+                      >
+                    </div>
+
+                    <div class="col-lg-6 form-floating">
+                      <input
+                        type="text"
+                        id="floatingInput"
+                        class="form-control"
+                        name="first_name"
+                        required
+                        placeholder="First Name"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >First Name<span style="color: red">*</span></label
+                      >
+                    </div>
+                  </div>
+
+                  <div class="row g-2">
+                    <div class="col-lg-6 form-floating">
+                      <input
+                        type="text"
+                        id="floatingInput"
+                        class="form-control"
+                        name="middle_name"
+                        placeholder="Middle Name"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >Middle Name</label
+                      >
+                    </div>
+
+                    <div class="col-lg-6 form-floating">
+                      <input
+                        type="text"
+                        id="floatingInput"
+                        class="form-control"
+                        name="last_name"
+                        placeholder="Last Name"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >Last Name</label
+                      >
+                    </div>
+                  </div>
+
+                  <div class="row g-2">
+                    <div class="col-lg-4 form-floating">
+                      <input
+                        type="number"
+                        id="floatingInput"
+                        class="form-control"
+                        name="country_code"
+                        required
+                        placeholder="Country Code"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >Country Code <span style="color: red">*</span></label
+                      >
+                    </div>
+
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-8 form-floating"
+                    >
+                      <input
+                        type="phone-number"
+                        id="floatingInput"
+                        class="form-control"
+                        maxlength="10"
+                        name="mobile_number"
+                        required
+                        placeholder="Mobile Number"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >Mobile Number <span style="color: red">*</span></label
+                      >
+                    </div>
+                  </div>
+
+                  <div
+                    class="form-outline flex-fill mb-0 col-lg-12 form-floating"
+                    style="padding: 0"
+                  >
+                    <input
+                      type="email"
+                      id="floatingInput"
+                      class="form-control"
+                      name="email_id"
+                      required
+                      placeholder="Email Id"
+                    />
+                    <label class="form-label" for="form3Example3c"
+                      >Email id <span style="color: red">*</span></label
+                    >
+                  </div>
+
+                  <div
+                    class="form-outline flex-fill mb-0 col-lg-12"
+                    style="padding: 0; margin-top: 20px"
+                  >
+                    <input
+                      type="file"
+                      id="form3Example3c"
+                      class="form-control"
+                      name="file"
+                      placeholder="Profile Photo"
+                    />
+                    <label class="form-label" for="file-upload"
+                      >Profile Photo</label
+                    >
+                  </div>
+
+                  <div
+                    class="form-outline flex-fill mb-0 col-lg-12 form-floating"
+                    style="padding: 0"
+                  >
+                    <input
+                      type="text"
+                      id="floatingInput"
+                      class="form-control"
+                      name="password"
+                      required
+                      placeholder="Password"
+                    />
+                    <label class="form-label" for="form3Example3c"
+                      >Password <span style="color: red">*</span></label
+                    >
+                  </div>
+
+                  <div class="row g-2">
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-5 form-floating"
+                    >
+                      <input
+                        type="text"
+                        id="floatingInput"
+                        class="form-control"
+                        name="zip_code"
+                        required
+                        placeholder="Zip Code"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >Zip Code <span style="color: red">*</span></label
+                      >
+                    </div>
+
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-4 form-floating"
+                    >
+                      <input
+                        type="text"
+                        step="any"
+                        id="floatingInput"
+                        class="form-control"
+                        name="city"
+                        required
+                        placeholder="City"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >City <span style="color: red">*</span></label
+                      >
+                    </div>
+
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-4 form-floating"
+                    >
+                      <input
+                        type="text"
+                        step="any"
+                        id="floatingInput"
+                        class="form-control"
+                        name="state"
+                        required
+                        placeholder="State"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >State <span style="color: red">*</span></label
+                      >
+                    </div>
+
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-4 form-floating"
+                    >
+                      <input
+                        type="text"
+                        step="any"
+                        id="floatingInput"
+                        class="form-control"
+                        name="address_line"
+                        required
+                        placeholder="Address Line"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >Address Line <span style="color: red">*</span></label
+                      >
+                    </div>
+                  </div>
+
+                  <div class="row g-2">
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-5 form-floating"
+                    >
+                      <input
+                        type="text"
+                        id="floatingInput"
+                        class="form-control"
+                        name="nationality"
+                        required
+                        placeholder="Nationality"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >Nationality <span style="color: red">*</span></label
+                      >
+                    </div>
+
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-4 form-floating"
+                    >
+                      <input
+                        type="number"
+                        step="any"
+                        id="floatingInput"
+                        class="form-control"
+                        name="cpi"
+                        required
+                        placeholder="CPI"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >CPI <span style="color: red">*</span></label
+                      >
+                    </div>
+
+                    <!-- convert into checkbox -->
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-4 form-floating"
+                    >
+                      <input
+                        type="number"
+                        id="floatingInput"
+                        class="form-control"
+                        name="backlogs"
+                        value="0"
+                        placeholder="Backlog(s)"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >Backlog(s)</label
+                      >
+                    </div>
+                  </div>
+
+                  <div class="row g-2">
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-6 form-floating"
+                      style="margin-top: 20px"
+                    >
+                      <input
+                        type="date"
+                        id="floatingInput"
+                        class="form-control"
+                        name="dob"
+                        required
+                        placeholder="DOB"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >DOB <span style="color: red">*</span></label
+                      >
+                    </div>
+
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-3 form-floating"
+                    >
+                      <input
+                        type="text"
+                        id="floatingInput"
+                        class="form-control"
+                        name="category"
+                        required
+                        placeholder="Category"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >Category <span style="color: red">*</span></label
+                      >
+                    </div>
+
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-3 form-floating"
+                    >
+                      <input
+                        type="text"
+                        id="floatingInput"
+                        class="form-control"
+                        name="gender"
+                        required
+                        placeholder="Gender"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >Gender <span style="color: red">*</span></label
+                      >
+                    </div>
+                  </div>
+
+                  <div class="row g-2">
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-4 form-floating"
+                    >
+                      <input
+                        type="number"
+                        id="floatingInput"
+                        class="form-control"
+                        name="experience"
+                        value="0"
+                        placeholder="Professional Experience(months)"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >Professional Experience (months)</label
+                      >
+                    </div>
+
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-4 form-floating"
+                    >
+                      <input
+                        type="email"
+                        id="floatingInput"
+                        class="form-control"
+                        name="personal_email"
+                        required
+                        placeholder="Personal Email ID"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >Personal Email ID
+                        <span style="color: red">*</span></label
+                      >
+                    </div>
+                  </div>
+
+
+
+                  <div class="row g-2">
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-4 form-floating"
+                    >
+                      <input
+                        type="text"
+                        id="floatingInput"
+                        class="form-control"
+                        name="10th_board"
+                        value=""
+                        placeholder="10th Board"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >10th Board</label
+                      >
+                    </div>
+
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-4 form-floating"
+                    >
+                    <input
+                    type="text"
+                    id="floatingInput"
+                    class="form-control"
+                    name="12th_board"
+                    value=""
+                    placeholder="12th Board"
+                  />
+                  <label class="form-label" for="form3Example3c"
+                    >12th Board</label
+                  >
+                    </div>
+                  </div>
+
+                  <div class="row g-2">
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-4 form-floating"
+                    >
+                      <input
+                        type="number"
+                        id="floatingInput"
+                        class="form-control"
+                        name="10th_board_percentage"
+                        value=""
+                        placeholder="10th Board (%/CGPA)"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >10th Board Percentage</label
+                      >
+                    </div>
+
+                   
+
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-4 form-floating"
+                    >
+                    <input
+                    type="number"
+                    id="floatingInput"
+                    class="form-control"
+                    name="12th_board_percentage"
+                    value=""
+                    placeholder="12th Board (%/CGPA)"
+                  />
+                  <label class="form-label" for="form3Example3c"
+                    >12th Board Percentage</label
+                  >
+                    </div>
+                  </div>
+
+                  <div class="row g-2">
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-4 form-floating"
+                    >
+                      <input
+                        type="text"
+                        id="floatingInput"
+                        class="form-control"
+                        name="competative_exam"
+                        value=""
+                        placeholder="Competative Exam Name"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >Competative Exam Name</label
+                      >
+                    </div>
+
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-4 form-floating"
+                    >
+                    <input
+                    type="number"
+                    id="floatingInput"
+                    class="form-control"
+                    name="exam_rank"
+                    value=""
+                    placeholder="Exam Rank"
+                  />
+                  <label class="form-label" for="form3Example3c"
+                    >Exam Rank</label
+                  >
+                    </div>
+                  </div>
+
+                  <div class="row g-2">
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-4 form-floating"
+                      style="margin-top: 20px"
+                    >
+                      <input
+                        type="date"
+                        id="floatingInput"
+                        class="form-control"
+                        name="joining_date"
+                        required
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >Date of Joining
+                        <span style="color: red">*</span></label
+                      >
+                    </div>
+
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-4 form-floating"
+                      style="margin-top: 20px"
+                    >
+                      <input
+                        type="month"
+                        id="floatingInput"
+                        class="form-control"
+                        name="year_of_graduation"
+                        required
+                        placeholder="Year of Graduation"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >Year of Graduation
+                        <span style="color: red">*</span></label
+                      >
+                    </div>
+                  </div>
+
+                  <!-- take file as input here, make it required -->
+                  <div
+                    class="form-outline flex-fill mb-0 col-lg-12"
+                    style="padding: 0; margin-top: 20px"
+                  >
+                    <input
+                      type="file"
+                      id="form3Example3c"
+                      class="form-control"
+                      name="rfile"
+                      required
+                    />
+                    <label class="form-label" for="file-upload"
+                      >Resume <span style="color: red">*</span></label
+                    >
+                  </div>
+
+                  <div class="row g-2">
+                    <!-- add a dropdown for curr program -->
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-3 form-floating"
+                    >
+                      <input
+                        type="text"
+                        id="floatingInput"
+                        class="form-control"
+                        name="major_discipline"
+                        required
+                        placeholder="Major Discipline"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >Major Discipline
+                        <span style="color: red">*</span></label
+                      >
+                    </div>
+
+                    <div
+                      class="form-outline flex-fill mb-0 col-lg-3 form-floating"
+                    >
+                      <input
+                        type="text"
+                        id="floatingInput"
+                        class="form-control"
+                        name="minor_disciplines"
+                        required
+                        placeholder="Minor Discipline"
+                      />
+                      <label class="form-label" for="form3Example3c"
+                        >Minor Disciplines
+                        <span style="color: red">*</span></label
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br />
+              <div class="form-check d-flex justify-content-center mb-5">
+                <input
+                  class="form-check-input me-2"
+                  type="checkbox"
+                  value=""
+                  id="form2Example3c"
+                  style="position: relative"
+                />
+                <label
+                  class="form-check-label"
+                  for="form2Example3"
+                  style="color: rgb(0, 0, 0)"
+                >
+                  I agree all statements in <a href="#!">Terms of service</a>
+                </label>
+              </div>
+              <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                <button type="submit" class="btn btn-primary btn-lg">
+                  Register
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script
+      src="http://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+      integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+      var arr = [];
+      for (var i = 0; i < 5; i++) {
+        var x = Math.floor(Math.random() * 100000000);
+        arr.push(x);
+      }
+      document.getElementById("student_id").innerText = arr;
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript">
+      window.onload = function () {
+        if ("{{ value }}") {
+          Swal.fire("{{ value }}", "Try Again!", "error");
+        }
+      };
+    </script>
+
+    <script>
+      // Get the current year for the copyright
+      $("#year").text(new Date().getFullYear());
+    </script>
+  </body>
+</html>
