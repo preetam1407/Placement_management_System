@@ -2,3 +2,5 @@ flask
 gunicorn
 flask-mysqldb
 Flask-SQLAlchemy
+PyYAML
+Werkzeug
