@@ -1,2 +1,2 @@
-flaskflask
-flask-mysqldb
+flask
+gunicorn
